@@ -6,16 +6,16 @@ class LspCli < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.0/lsp-aarch64-apple-darwin.tar.gz"
-    sha256 "cf9d33f1a53b27c2f528ec466892569460e165c8248e0421462ab5a314a8ac70"
+    sha256 "a43bb6ae6d27564083aea64b326a63582cb1a2095bfa86cca724ca901a3b18c4"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.0/lsp-x86_64-apple-darwin.tar.gz"
-    sha256 "cc7680831539500c2cdcc88e32eec3fa9c04548d6f88d6aa3e84c85a9d320ec2"
+    sha256 "16fd9026dd9132416ba1e43e4d21abf8aa54ac0c3e99edd27d5ccc2d76088fab"
   elsif OS.linux? && Hardware::CPU.arm?
     url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.0/lsp-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "ab7acf5290bea35cadba577bac8fb40e2eb711cf1ab5ecb2ad8740f70054a433"
+    sha256 "893797696637e42f8944305c276144b97b73acbd4f15c5ecf9de151069a4aa7d"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.0/lsp-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "c62dabd617e99a16ebbc8b7197e4a97ebbf509bf548507c2816c0c4109c50c3c"
+    sha256 "4ac6aaf2c1a557faf77ab0fe962ef3ec695e7722e60c4b87d180ba4016c64fa7"
   end
 
   def install
