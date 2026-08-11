@@ -1,25 +1,32 @@
 class LspCli < Formula
   desc "LSP-based code navigation CLI for coding agents and humans"
   homepage "https://github.com/huyz0/lsp-cli"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.1/lsp-aarch64-apple-darwin.tar.gz"
-    sha256 "71e0b2bb05c838fe04b48de993452e93209d07148de8e21bbc2b96c9bc364709"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.2.0/lsp-aarch64-apple-darwin.tar.gz"
+    sha256 "7e1604bd5113f9a1539ef94c2882ddc40f09b65f6d0d529a2912b1d1824a0efb"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.1/lsp-x86_64-apple-darwin.tar.gz"
-    sha256 "ddf101aeef88ecdf81992f00448daeacfe4be6b5be95e46fc6b1b1b1726e7a48"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.2.0/lsp-x86_64-apple-darwin.tar.gz"
+    sha256 "d2399e2623c740aa742148ee1cd0b0620a9dfd8d2e0fa3946777be7841995908"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.1/lsp-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "72a4d55a0470f5fbe70f2bbb3820ce280ee688bd1adbc66aee6d634785ffbeec"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.2.0/lsp-aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "d37c24408a8c25258784c0c9312c5082fba0e0571a1102954d4acce6287a57db"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.1.1/lsp-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "715e95d766b13c167dcc217b9d3db542235ee07b10e6b4301995d6c9f2a4084a"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.2.0/lsp-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "4d5ef9e542a4a0246427761d633d386626a5953af3b94177d79a4577664e30be"
   end
 
   def install
+    # Bundled Rust-native servers (lsp-json-lsp, lsp-css-lsp,
+    # ...) must sit next to  itself — registry.rs resolves
+    # each one relative to the running executable's own
+    # directory. Globbed so adding another bundled server
+    # doesn't need another edit here; installing them all into
+    # the same bin/ keeps that true under Homebrew too.
     bin.install "lsp"
+    bin.install Dir["lsp-*-lsp"]
   end
 
   def caveats
