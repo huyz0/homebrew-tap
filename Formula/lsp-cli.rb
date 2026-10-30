@@ -1,21 +1,21 @@
 class LspCli < Formula
   desc "LSP-based code navigation CLI for coding agents and humans"
   homepage "https://github.com/huyz0/lsp-cli"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.0/lsp-aarch64-apple-darwin.tar.gz"
-    sha256 "90b050c86740f4a0017f50e71962c7baaf4adc93ce308a1abceb393eb5f7b026"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.1/lsp-aarch64-apple-darwin.tar.gz"
+    sha256 "f687ab77c19bd5bb8edaff1e6a55fbf4735802d39a45521eb5aaedc17a61cb29"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.0/lsp-x86_64-apple-darwin.tar.gz"
-    sha256 "f4af732119328ffa958c0a5009e6445341e6f58aa290457c37fa8221f8868875"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.1/lsp-x86_64-apple-darwin.tar.gz"
+    sha256 "39abe69630f1152f4cb75488d6a52a6f75834e288f1df54d8d947d3b0245f987"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.0/lsp-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "8091926e635bd80717e8f40d85ca77e574c9c5217ced03b5c9a911e487018c43"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.1/lsp-aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "f167af40547bd4fa3b8546ed15c4d800774d14191cb5f14ac21f1b103912fff9"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.0/lsp-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "af3915a9b5e72e25d88ded32b1a14f711b92ce09287f548bc1cc3f8c13cb0103"
+    url "https://github.com/huyz0/lsp-cli/releases/download/v0.4.1/lsp-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "c3d3eed331e5eac07e612a3bc1b05b8a01a7df8396e43ccf33aecce98450513a"
   end
 
   def install
